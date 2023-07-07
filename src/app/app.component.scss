@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Sets the height of each row */
+    grid-template-areas: "header" "main" "footer";
+    min-height: 100vh; /* Ensures the grid fills the viewport height */
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: #f1f1f1;
+  }
+  
+  .main {
+    grid-area: main;
+    background-color: #fff;
+    overflow: auto; /* Allows the main content to scroll when it exceeds the height */
+  }
+  
+  .footer {
+    grid-area: footer;
+    background-color: #f1f1f1;
+  }
+  
