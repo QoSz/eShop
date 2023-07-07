@@ -7,13 +7,31 @@
   
   .header {
     grid-area: header;
-    background-color: #f1f1f1;
   }
   
   .main {
     grid-area: main;
     background-color: #fff;
+    padding-top: 4.5rem;
     overflow: auto; /* Allows the main content to scroll when it exceeds the height */
+
+    .scroll-up-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #38b9ff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .scroll-up-button i {
+      margin-top: 12px;
+      font-size: 20px;
+    }
   }
   
   .footer {
