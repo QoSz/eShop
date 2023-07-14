@@ -1,43 +1,57 @@
 .grid-container {
-    display: grid;
-    grid-template-rows: auto 1fr auto; /* Sets the height of each row */
-    grid-template-areas: "header" "main" "footer";
-    min-height: 100vh; /* Ensures the grid fills the viewport height */
-  }
-  
-  .header {
-    grid-area: header;
-  }
-  
-  .main {
-    grid-area: main;
-    background-color: #fff;
-    padding-top: 4.5rem;
-    overflow: auto; /* Allows the main content to scroll when it exceeds the height */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* Sets the height of each row */
+  grid-template-areas: "header" "main" "footer";
+  min-height: 100vh;
+  /* Ensures the grid fills the viewport height */
+}
 
-    .scroll-up-button {
-      position: fixed;
-      z-index: 1000;
-      bottom: 20px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #1fff9aac;
-      color: #fff;
-      border: none;
-      cursor: pointer;
+.header {
+  grid-area: header;
+}
 
-      i {
-        font-size: 1.1rem;
-        color: rgb(81, 81, 81);
+.main {
+  grid-area: main;
+  background-color: #fff;
+  padding-top: 4.5rem;
+  overflow: auto;
+  /* Allows the main content to scroll when it exceeds the height */
+
+  .scroll-up-button {
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1fff9aac;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
       }
     }
-  
+
+    i {
+      font-size: 1.1rem;
+      color: rgb(81, 81, 81);
+    }
   }
-  
-  .footer {
-    grid-area: footer;
-    background-color: #f1f1f1;
-  }
-  
+
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #f1f1f1;
+}

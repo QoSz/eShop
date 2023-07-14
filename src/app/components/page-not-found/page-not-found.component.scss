@@ -1,0 +1,35 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+
+.error-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    .emoji-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .face-icon {
+            font-size: 8rem;
+        }
+    }
+
+    .error-text {
+        text-align: center;
+        color: #9f9f9f;
+        margin: 0;
+    }
+
+    .number-404 {
+        font-size: 6rem;
+    }
+}
