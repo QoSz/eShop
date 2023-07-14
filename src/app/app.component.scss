@@ -17,21 +17,23 @@
 
     .scroll-up-button {
       position: fixed;
+      z-index: 1000;
       bottom: 20px;
       right: 20px;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: #38b9ff;
+      background-color: #1fff9aac;
       color: #fff;
       border: none;
       cursor: pointer;
+
+      i {
+        font-size: 1.1rem;
+        color: rgb(81, 81, 81);
+      }
     }
-    
-    .scroll-up-button i {
-      margin-top: 12px;
-      font-size: 20px;
-    }
+  
   }
   
   .footer {

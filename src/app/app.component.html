@@ -11,8 +11,10 @@
     <p>Sed non metus vel erat consequat tincidunt. Integer dapibus vitae lorem vel feugiat. Ut tincidunt lectus id nisi tempus aliquam.</p>
     <router-outlet></router-outlet>
     <button *ngIf="showScrollUpButton" class="scroll-up-button" (click)="scrollToTop()">
-      <i class="fa fa-chevron-up"></i>
+      <i class="bi bi-arrow-up"></i>
     </button>
   </main>
-  <footer class="footer">Footer</footer>
+  <footer class="footer">
+    <app-footer></app-footer>
+  </footer>
 </div>
