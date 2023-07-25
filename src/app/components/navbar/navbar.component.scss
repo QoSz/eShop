@@ -39,3 +39,11 @@ nav {
 .nav-flex-end {
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 330px) {
+    .nav-container {
+        .nav-brand-container {
+            font-size: 1rem;
+        }
+    }
+}
