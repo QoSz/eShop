@@ -1,0 +1,69 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+
+.error-card {
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    .emoji-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .face-icon {
+            font-size: 7rem;
+        }
+    }
+
+    .error-text {
+        text-align: center;
+        color: #898989;
+        margin: 0;
+    }
+
+    .number-404 {
+        font-size: 5.2rem;
+    }
+
+    .pnf-text {
+        font-size: 2.5rem;
+    }
+
+    .error-description-text {
+        font-size: 1.6rem;
+        padding: 1.2rem 0;
+        text-wrap: pretty;
+    }
+}
+
+.back-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .back-btn {
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba(0, 165, 255, 0.78);
+        transition: all 0.2s ease-in-out;
+        border: none;
+
+        &:hover {
+            background-color: rgba(0, 165, 255, 1);
+        }
+    }
+
+    .back-btn-text {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+    }
+}
