@@ -1,5 +1,6 @@
-.about-us-container {
+.contact-us-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -7,7 +8,11 @@
     padding: 2rem;
 }
 
-.about-us-card {
+.contact-us-heading {
+    padding-bottom: 2rem;
+}
+
+.contact-us-card {
     display: grid;
     width: 100%;
     height: 100%;
@@ -101,6 +106,7 @@
         .instagram-icon {
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }
@@ -117,14 +123,14 @@
 }
 
 @media screen and (max-width: 910px) {
-    .about-us-card {
+    .contact-us-card {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 500px) {
-    .about-us-card {
+    .contact-us-card {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 25rem;
     }
