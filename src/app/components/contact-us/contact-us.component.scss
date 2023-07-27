@@ -28,6 +28,7 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    animation: slideIn 1s ease;
 
     p {
         margin: 0;
@@ -43,14 +44,14 @@
 .icon-container {
     display: flex;
     justify-content: center;
-    align-items: center;   
+    align-items: center;
 }
 
 .contact-sub-text {
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
-    padding: 0.70rem 0; 
+    padding: 0.70rem 0;
 }
 
 .contact-sub-info {
@@ -63,7 +64,7 @@
 }
 
 .address-container {
-   
+
 
     .address-icon {
         font-size: 2.3rem;
@@ -138,5 +139,18 @@
     .contact-info-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+// create a keyframe animation called slideIn that slides in the element from the left side
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
