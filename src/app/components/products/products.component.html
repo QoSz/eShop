@@ -1,1 +1,39 @@
-<p>products works!</p>
+<div class="products-container-global">
+    <h1 class="products-heading">Products</h1>
+
+    <div class="products-container">
+        <h2 class="heading-center">Shredders</h2>
+        <div class="shredders-container">
+            <div class="card shredder-card" *ngFor="let shredder of shredders">
+                <div class="product-card-img-container">
+                    <img src="{{ shredder.img }}" class="card-img-top shredder-img" alt="files">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ shredder.name }}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a href="" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+
+    <div class="products-container">
+        <h2 class="heading-center">Files</h2>
+        <div class="files-container">
+            <div class="card files-card" *ngFor="let file of files">
+                <div class="product-card-img-container">
+                    <img src="{{file.img}}" class="card-img-top file-img" alt="files">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{file.name}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a href="" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+</div>

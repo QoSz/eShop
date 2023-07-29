@@ -1,0 +1,181 @@
+.products-container-global {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // height: 100%;
+    padding: 2rem;
+}
+
+.products-heading {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.products-container {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.heading-center {
+    text-align: center;
+    padding-bottom: 2rem;
+    margin: 0;
+}
+
+// <--------------------------------------- Shreders --------------------------------------->
+
+.shredders-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    place-items: center;
+    gap: 1rem;
+}
+
+
+.shredder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shredder-card {
+    box-sizing: border-box; // Add this line
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 28rem;
+}
+
+// <--------------------------------------- Shreders --------------------------------------->
+
+// <--------------------------------------- Files --------------------------------------->
+
+.files-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    place-items: center;
+    gap: 1rem;
+}
+
+.file-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.files-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 19rem;
+    box-sizing: border-box;
+}
+
+// <--------------------------------------- Files --------------------------------------->
+
+.product-card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+
+    .get-quote-btn {
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        background-color: rgba(0, 165, 255, 0.78);
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            background-color: rgba(0, 165, 255, 1);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .shredders-container {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+
+    .shredder-card {
+        width: calc(100% - 1rem);
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .files-card {
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .files-container {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+
+    .files-card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 687px) {
+    .shredder-card {
+        width: calc(100% - 2rem);
+    }
+}
+
+@media screen and (max-width: 592px) {
+    .products-container-global {
+        padding: 1rem;
+    }
+
+    .files-card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 559px) {
+    .files-card {
+        width: calc(100% - 2rem);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .products-container-global {
+        padding: 1rem;
+    }
+
+    .files-card {
+        width: calc(100%);
+    }
+
+    .shredders-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .shredder-card {
+        width: 100%;
+    }
+}

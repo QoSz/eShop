@@ -39,7 +39,13 @@
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 1rem;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
 }
+
 
 .icon-container {
     display: flex;
@@ -131,6 +137,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .contact-us-container {
+        padding: 1rem;
+    }
+
     .contact-us-card {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 25rem;
