@@ -8,6 +8,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class ProductsComponent {
 
+  superNotes: {name: string, img: string} [] = [
+    { name: 'Super Note 1', img: 'assets/Images/SuperNote/supernote1.webp' },
+    { name: 'Super Note 2', img: 'assets/Images/SuperNote/supernote2.webp' },
+  ];
+
   shredders: {name: string; img: string;} [] = [
     { name: 'Shreader 1', img: 'assets/Images/Shredders/shredder1.jpeg' },
     { name: 'Shreader 2', img: 'assets/Images/Shredders/shredder2.jpeg' },

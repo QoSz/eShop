@@ -2,6 +2,24 @@
     <h1 class="products-heading">Products</h1>
 
     <div class="products-container">
+        <h2 class="heading-center">Super Note</h2>
+        <div class="supernote-container">
+            <div class="card supernote-card" *ngFor="let superNote of superNotes">
+                <div class="product-card-img-container">
+                    <img src="{{ superNote.img }}" class="card-img-top supernote-img" alt="files">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ superNote.name }}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a href="" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+
+    <div class="products-container">
         <h2 class="heading-center">Shredders</h2>
         <div class="shredders-container">
             <div class="card shredder-card" *ngFor="let shredder of shredders">
