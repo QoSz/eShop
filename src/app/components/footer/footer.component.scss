@@ -20,22 +20,16 @@
 
     .logo-container {
         grid-area: logo;
-    
-        .footer-brand-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.2rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.15rem;
-            text-decoration: none;
-            color: white;
+        
+        .footer-logo {
+            height: 5rem;
         }
     }
     
     .address-container {
         grid-area: address;
+        display: flex;
+        align-items: center;
     }
     
     .contact-details-container {
@@ -56,7 +50,7 @@
 .footer-links {
 
     .footer-links-header {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         font-weight: 500;
         letter-spacing: 0.05rem;
         color: rgb(255, 255, 255);
