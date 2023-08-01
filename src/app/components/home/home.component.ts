@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  carouselItems = [
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch PP Box Files.webp',
+      altText: 'slide 1'
+    },
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files All Colours.webp',
+      altText: 'slide 2'
+    },
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredders.webp',
+      altText: 'slide 3'
+    },
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredder and Lubricant Sheet Box.webp',
+      altText: 'slide 4'
+    },
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/supernoteA5x.webp',
+      altText: 'slide 5'
+    },
+    {
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/supernoteA6x.webp',
+      altText: 'slide 6'
+    },
+  ];
 }
