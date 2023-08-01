@@ -3,7 +3,6 @@ nav {
 }
 
 .nav-container {
-    padding: 1rem;
     background: rgba(0, 165, 255, 0.78);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -12,12 +11,14 @@ nav {
 
     .nav-brand-container {
         display: flex;
+        justify-content: center;
         align-items: center;
-        gap: 1rem;
-        font-size: 1.2rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 0.15rem;
+        width: 9rem;
+        height: 5rem;
+
+        .nav-brand-img {
+            height: 4rem;
+        }
     }
 
     .nav-link-label {
@@ -43,21 +44,4 @@ nav {
 
 .nav-flex-end {
     justify-content: flex-end;
-}
-
-
-@media screen and (max-width: 350px) {
-    .nav-container {
-        .nav-brand-container {
-            font-size: 1rem;
-        }
-    }
-}
-
-@media screen and (max-width: 319px) {
-    .nav-container {
-        .nav-brand-container {
-            font-size: 0.8rem;
-        }
-    }
 }
