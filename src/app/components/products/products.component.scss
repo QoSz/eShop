@@ -20,6 +20,18 @@
     max-width: 100%;
 }
 
+.product-card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0.75rem 0;
+    margin: 0;
+}
+
+.product-card-description {
+    font-size: 1rem;
+    margin: 0;
+}
+
 .heading-center {
     text-align: center;
     padding-bottom: 2rem;
@@ -44,11 +56,14 @@
 }
 
 .supernote-card {
+    width: 28rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box; // Add this line
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 1rem;
-    width: 28rem;
 }
 
 // <--------------------------------------- Super Note --------------------------------------->
@@ -67,14 +82,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 }
 
 .shredder-card {
+    width: 28rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box; // Add this line
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 1rem;
-    width: 28rem;
+    
 }
 
 // <--------------------------------------- Shreders --------------------------------------->
@@ -95,6 +115,9 @@
 }
 
 .files-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 1rem;
@@ -104,11 +127,6 @@
 
 // <--------------------------------------- Files --------------------------------------->
 
-.product-card-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .get-quote-container {
     display: flex;
@@ -218,16 +236,16 @@
         width: 100%;
     }
 
-    .supernote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
+        .supernote-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
 
-    .supernote-card {
-        width: 100%;
-    }
+        .supernote-card {
+            width: 100%;
+        }
 }
 
 

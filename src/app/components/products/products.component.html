@@ -6,11 +6,29 @@
         <div class="supernote-container">
             <div class="card supernote-card" *ngFor="let superNote of superNotes">
                 <div class="product-card-img-container">
-                    <img src="{{ superNote.img }}" class="card-img-top supernote-img" alt="files">
+                    <!-- Super Note Carousel -->
+                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
+                                [ngClass]="{ 'active': i === 0 }">
+                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{ superNote.name }}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title product-card-title">{{ superNote.name }}</h5>
+                    <p class="card-text product-card-description">{{superNote.description}}</p>
                 </div>
             </div>
         </div>
@@ -19,16 +37,37 @@
         </div>
     </div>
 
+
+
+    <!-- Shredders Section -->
     <div class="products-container">
         <h2 class="heading-center">Shredders</h2>
         <div class="shredders-container">
             <div class="card shredder-card" *ngFor="let shredder of shredders">
                 <div class="product-card-img-container">
-                    <img src="{{ shredder.img }}" class="card-img-top shredder-img" alt="files">
+                    <!-- Shredder Carousel -->
+                    <div [id]="'shredderCarousel' + shredder.id" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of shredder.carouselImgs; let i = index"
+                                [ngClass]="{ 'active': i === 0 }">
+                                <img src="{{ img }}" class="card-img-top shredder-img" alt="shredder">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            [attr.data-bs-target]="'#shredderCarousel' + shredder.id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            [attr.data-bs-target]="'#shredderCarousel' + shredder.id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{ shredder.name }}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title product-card-title">{{ shredder.name }}</h5>
+                    <p class="card-text">{{ shredder.description }}</p>
                 </div>
             </div>
         </div>
@@ -37,16 +76,35 @@
         </div>
     </div>
 
+    <!-- Files Section -->
     <div class="products-container">
         <h2 class="heading-center">Files</h2>
         <div class="files-container">
             <div class="card files-card" *ngFor="let file of files">
                 <div class="product-card-img-container">
-                    <img src="{{file.img}}" class="card-img-top file-img" alt="files">
+                    <!-- Files Carousel -->
+                    <div [id]="'filesCarousel' + file.id" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of file.carouselImgs; let i = index"
+                                [ngClass]="{ 'active': i === 0 }">
+                                <img src="{{ img }}" class="card-img-top file-img" alt="file">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            [attr.data-bs-target]="'#filesCarousel' + file.id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            [attr.data-bs-target]="'#filesCarousel' + file.id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{file.name}}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title product-card-title">{{ file.name }}</h5>
+                    <p class="card-text">{{ file.description }}</p>
                 </div>
             </div>
         </div>
@@ -54,4 +112,5 @@
             <a href="" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
+
 </div>
