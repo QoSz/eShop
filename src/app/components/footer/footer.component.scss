@@ -1,7 +1,7 @@
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columns with minimum width of 300px */
-    background-color: rgba(0, 165, 255, 0.9);
+    background-color: rgba(37, 61, 131, 0.90);
     color: white;
 }
 
@@ -11,33 +11,26 @@
 
 .footer-company-details {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
         "logo"
-        "address"
-        "contact";
-    grid-gap: 1rem;
+        "address-contact";
 
     .logo-container {
         grid-area: logo;
+        display: flex;
+        align-items: center;
         
         .footer-logo {
             height: 5rem;
         }
     }
     
-    .address-container {
-        grid-area: address;
+    .address-contact-container {
+        grid-area: address-contact;
         display: flex;
-        align-items: center;
-    }
-    
-    .contact-details-container {
-        grid-area: contact;
-    
-        .bold-text {
-            font-weight: bold;
-        }
+        flex-direction: column;
+        gap: 0.5rem;
     }
     
     .footer-text {
@@ -45,6 +38,10 @@
         letter-spacing: 0.05rem;
         margin: 0;
     }
+}
+
+.bold-text {
+    font-weight: bold;
 }
 
 .footer-links {
@@ -68,7 +65,7 @@
     }
 
     .footer-links-li {
-        font-size: 1rem;
+        font-size: 1.1rem;
         letter-spacing: 0.05rem;
         color: rgb(255, 255, 255);
         text-decoration: none;
@@ -88,7 +85,7 @@
 }
 
 .copy-right-container {
-    background-color: rgba(0, 165, 255, 0.78);
+    background-color: rgba(37, 61, 131, 0.83);
 
     .copy-right-text {
         display: flex;
