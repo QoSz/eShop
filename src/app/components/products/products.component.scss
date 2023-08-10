@@ -38,6 +38,43 @@
     margin: 0;
 }
 
+// <--------------------------------------- Brands Container --------------------------------------->
+.brands-container {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+}
+
+.brands-logo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.brands-logo {
+    width: 8rem;
+    animation: slideInLR 1s ease;
+}
+
+.faili-logo-container {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.super-note-logo-container {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// <--------------------------------------- Brands Container --------------------------------------->
+
 // <--------------------------------------- Super Note --------------------------------------->
 
 .supernote-container {
@@ -126,6 +163,27 @@
     width: 19rem;
     box-sizing: border-box;
     animation: slideInLR 1s ease;
+}
+
+.files-heading-h2 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.files-heading {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 0;
+    margin: 0;
+}
+
+.files-card-body {
+    padding: 1rem 0 0;
+}
+ 
+.files-card-title {
+    padding: 0;
 }
 
 // <--------------------------------------- Files --------------------------------------->

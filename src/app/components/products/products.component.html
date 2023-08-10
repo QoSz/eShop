@@ -1,43 +1,19 @@
 <div class="products-container-global">
     <h1 class="products-heading">Products</h1>
 
-    <div class="products-container">
-        <h2 class="heading-center">Super Note</h2>
-        <div class="supernote-container">
-            <div class="card supernote-card" *ngFor="let superNote of superNotes">
-                <div class="product-card-img-container">
-                    <!-- Super Note Carousel -->
-                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
-                        <div class="carousel-inner">
-                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
-                                [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title product-card-title">{{ superNote.name }}</h5>
-                    <p class="card-text product-card-description">{{superNote.description}}</p>
-                </div>
+    <div class="brands-container">
+        <h2 class="heading-center">Brands</h2>
+        <div class="brands-logo-container">
+            <div class="faili-logo-container">
+                <img class="brands-logo" src="assets/Images/Faili-Logo-Transparent.svg" alt="faili logo">
+            </div>
+            <div class="super-note-logo-container">
+                <a (click)="scrollToSuperNoteSection()">
+                    <img class="brands-logo" src="assets/Images/SuperNote-Logo.svg" alt="supernote logo">
+                </a>
             </div>
         </div>
-        <div class="get-quote-container">
-            <a href="" class="get-quote-btn">Get a quote</a>
-        </div>
     </div>
-
-
 
     <!-- Shredders Section -->
     <div class="products-container">
@@ -78,33 +54,227 @@
 
     <!-- Files Section -->
     <div class="products-container">
-        <h2 class="heading-center">Files</h2>
-        <div class="files-container">
-            <div class="card files-card" *ngFor="let file of files">
+        <h2 class="files-heading-h2">Files</h2>
+        <div class="two-inch-A4-PP-Box-container">
+            <h3 class="files-heading">2 inch A4 PP Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of twoInchA4Files">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="two-inch-FC-PP-Box-container">
+            <h3 class="files-heading">2 inch FC PP Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of twoInchFCFiles">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="three-inch-A4-PP-Box-container">
+            <h3 class="files-heading">3 inch A4 PP Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of threeInchA4Files">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="three-inch-FC-PP-Box-container">
+            <h3 class="files-heading">3 inch FC PP Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of threeInchFCFiles">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="three-inch-A4-Marble-Box-container">
+            <h3 class="files-heading">3 inch A4 Marble Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of threeInchA4MarbleFiles">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="three-inch-FC-Marble-Box-container">
+            <h3 class="files-heading">3 inch FC Marble Box</h3>
+            <div class="files-container">
+                <div class="card files-card" *ngFor="let fileBox of threeInchFCMarbleFiles">
+                    <div class="file-box-img-container">
+                        <!-- File Box Carousel -->
+                        <div [id]="'fileBoxCarousel' + fileBox.id" class="carousel slide carousel-fade">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
+                                    [ngClass]="{ 'active': i === 0 }">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#fileBoxCarousel' + fileBox.id" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body files-card-body">
+                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a href="" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+
+
+    <div id="super-note-section" class="products-container">
+        <h2 class="heading-center">Super Note</h2>
+        <div class="supernote-container">
+            <div class="card supernote-card" *ngFor="let superNote of superNotes">
                 <div class="product-card-img-container">
-                    <!-- Files Carousel -->
-                    <div [id]="'filesCarousel' + file.id" class="carousel slide carousel-fade">
+                    <!-- Super Note Carousel -->
+                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
                         <div class="carousel-inner">
-                            <div class="carousel-item" *ngFor="let img of file.carouselImgs; let i = index"
+                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
                                 [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top file-img" alt="file">
+                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button"
-                            [attr.data-bs-target]="'#filesCarousel' + file.id" data-bs-slide="prev">
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button"
-                            [attr.data-bs-target]="'#filesCarousel' + file.id" data-bs-slide="next">
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title product-card-title">{{ file.name }}</h5>
-                    <p class="card-text">{{ file.description }}</p>
+                    <h5 class="card-title product-card-title">{{ superNote.name }}</h5>
+                    <p class="card-text product-card-description">{{superNote.description}}</p>
                 </div>
             </div>
         </div>

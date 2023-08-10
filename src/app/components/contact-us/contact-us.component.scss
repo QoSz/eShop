@@ -10,6 +10,7 @@
 
 .contact-us-heading {
     padding-bottom: 2rem;
+    margin: 0;
 }
 
 .contact-us-card {
@@ -28,7 +29,7 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    animation: slideIn 1s ease;
+    animation: waterFallRL 1s ease;
 
     p {
         margin: 0;
@@ -120,6 +121,7 @@
 }
 
 .location-pin-container {
+    animation: waterFallLR 1s ease;
 
     .location-map {
         border-radius: 1rem;
@@ -152,15 +154,26 @@
     }
 }
 
-// create a keyframe animation called slideIn that slides in the element from the left side
-
-@keyframes slideIn {
+// create a keyframe animation called waterFallLR that rotates an element from 90 degrees to 0 degrees and make the element fall in a curve from the top right to the bottom.
+@keyframes waterFallLR {
     0% {
-        transform: translateX(-100%);
+        transform: rotate(-90deg) translateX(100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+}
+
+// create a keyframe for waterFallRL
+@keyframes waterFallRL {
+    0% {
+        transform: rotate(90deg) translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg) translateX(0);
         opacity: 1;
     }
 }
