@@ -2,13 +2,24 @@
     <h1 class="products-heading">Products</h1>
 
     <div class="brands-container">
-        <h2 class="heading-center">Brands</h2>
         <div class="brands-logo-container">
             <div class="faili-logo-container">
-                <img class="brands-logo" src="assets/Images/Faili-Logo-Transparent.svg" alt="faili logo">
+                <div class="dropdown">
+                    <button class="faili-logo-dropdown-btn" type="button" data-bs-toggle="dropdown">
+                        <img class="brands-logo" src="assets/Images/Faili-Logo-Transparent.svg" alt="faili logo">
+                    </button>
+                    <ul class="dropdown-menu faili-logo-dropdown-menu">
+                        <li><a class="dropdown-item faili-dropdown-option"
+                                (click)="scrollToSection('shredders')">Shredders</a></li>
+                        <li><a class="dropdown-item faili-dropdown-option" (click)="scrollToSection('files')">Files</a>
+                        </li>
+                        <li><a class="dropdown-item faili-dropdown-option"
+                                (click)="scrollToSection('file-divider')">Dividers</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="super-note-logo-container">
-                <a (click)="scrollToSuperNoteSection()">
+                <a (click)="scrollToSection('super-note')">
                     <img class="brands-logo" src="assets/Images/SuperNote-Logo.svg" alt="supernote logo">
                 </a>
             </div>
@@ -16,7 +27,7 @@
     </div>
 
     <!-- Shredders Section -->
-    <div class="products-container">
+    <div id="shredders-section" class="products-container">
         <h2 class="heading-center">Shredders</h2>
         <div class="shredders-container">
             <div class="card shredder-card" *ngFor="let shredder of shredders">
@@ -53,9 +64,30 @@
     </div>
 
     <!-- Files Section -->
-    <div class="products-container">
+    <div id="files-section" class="products-container">
         <h2 class="files-heading-h2">Files</h2>
-        <div class="two-inch-A4-PP-Box-container">
+
+        <div class="files-filter-container">
+            <label class="files-filter-label">Filter Files:</label>
+            <button class="filter-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter <i class="bi bi-funnel"></i>
+            </button>
+            <div class="dropdown-menu file-filter-menu" aria-labelledby="dropdownMenuButton">
+                <label class="dropdown-item">
+                    <input type="checkbox" [(ngModel)]="filterOptions.all" (change)="toggleAllOptions()" /> All
+                </label>
+                <div class="dropdown-divider"></div>
+                <ng-container *ngFor="let option of filterOptions.options">
+                    <label class="dropdown-item">
+                        <input type="checkbox" [(ngModel)]="option.checked" (change)="updateAllCheckbox()" /> {{
+                        option.label }}
+                    </label>
+                </ng-container>
+            </div>
+        </div>
+
+
+        <div class="two-inch-A4-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('2 inch A4 PP Box')">
             <h3 class="files-heading">2 inch A4 PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of twoInchA4Files">
@@ -86,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="two-inch-FC-PP-Box-container">
+        <div class="two-inch-FC-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('2 inch FC PP Box')">
             <h3 class="files-heading">2 inch FC PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of twoInchFCFiles">
@@ -117,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="three-inch-A4-PP-Box-container">
+        <div class="three-inch-A4-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 PP Box')">
             <h3 class="files-heading">3 inch A4 PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchA4Files">
@@ -148,7 +180,7 @@
                 </div>
             </div>
         </div>
-        <div class="three-inch-FC-PP-Box-container">
+        <div class="three-inch-FC-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC PP Box')">
             <h3 class="files-heading">3 inch FC PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchFCFiles">
@@ -179,7 +211,7 @@
                 </div>
             </div>
         </div>
-        <div class="three-inch-A4-Marble-Box-container">
+        <div class="three-inch-A4-Marble-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 Marble Laminated Box')">
             <h3 class="files-heading">3 inch A4 Marble Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchA4MarbleFiles">
@@ -210,7 +242,7 @@
                 </div>
             </div>
         </div>
-        <div class="three-inch-FC-Marble-Box-container">
+        <div class="three-inch-FC-Marble-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC Marble Laminated Box')">
             <h3 class="files-heading">3 inch FC Marble Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchFCMarbleFiles">
@@ -238,6 +270,41 @@
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a href="" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+
+    <div id="file-divider-section" class="products-container">
+        <h2 class="heading-center">Dividers</h2>
+        <div class="dividers-container">
+            <div class="card dividers-card" *ngFor="let divider of fileDividers">
+                <div class="product-card-img-container">
+                    <!-- Super Note Carousel -->
+                    <div [id]="'dividersCarousel' + divider.id" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of divider.carouselImgs; let i = index"
+                                [ngClass]="{ 'active': i === 0 }">
+                                <img src="{{ img }}" class="card-img-top dividers-img" alt="files">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            [attr.data-bs-target]="'#dividersCarousel' + divider.id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            [attr.data-bs-target]="'#dividersCarousel' + divider.id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body card-body-dividers">
+                    <h5 class="card-title product-card-title dividers-card-title">{{ divider.name }}</h5>
                 </div>
             </div>
         </div>

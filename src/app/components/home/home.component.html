@@ -1,34 +1,31 @@
 <div class="home-container">
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button *ngFor="let item of carouselItems; let i = index"
-                type="button"
-                [attr.data-bs-target]="'#hero-carousel'"
-                [attr.data-bs-slide-to]="i"
-                [ngClass]="{ 'active': i === 0 }"
-                [attr.aria-label]="'Slide ' + (i + 1)">
-        </button>
-      </div>
-      <div class="carousel-inner">
-        <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [ngClass]="{ 'active': i === 0 }">
+  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button *ngFor="let item of carouselItems; let i = index" type="button" [attr.data-bs-target]="'#hero-carousel'"
+        [attr.data-bs-slide-to]="i" [ngClass]="{ 'active': i === 0 }" [attr.aria-label]="'Slide ' + (i + 1)">
+      </button>
+    </div>
+    <div class="carousel-inner">
+      <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [ngClass]="{ 'active': i === 0 }">
+        <div class="image-container">
           <img [src]="item.imageUrl" class="d-block w-100 carousel-image" [alt]="item.altText">
-          <div class="carousel-caption d-md-block">
-            <h1 class="caption-big-text">Organize, Create and Secure</h1>
-            <p class="caption-small-text">"Elevate Your Paper Management with Our Premium Collection!"</p>
-            <div class="caption-btn-container">
-              <a routerLink="/products" class="caption-btn">Explore our products <i class="bi bi-arrow-right"></i></a>
-            </div>
+        </div>
+        <div class="carousel-caption d-md-block">
+          <h1 class="caption-big-text">Organize, Create and Secure</h1>
+          <p class="caption-small-text">"Elevate Your Paper Management with Our Premium Collection!"</p>
+          <div class="caption-btn-container">
+            <a routerLink="/products" class="caption-btn">Explore our products <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  
+</div>

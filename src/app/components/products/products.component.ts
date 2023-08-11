@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -7,8 +6,38 @@ import { Router } from '@angular/router';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
-  constructor(private router: Router) {}
+export class ProductsComponent implements OnInit {
+  checkedFiles: string[] = [];
+
+  ngOnInit(): void {
+    this.toggleAllOptions();
+  }
+
+  filterOptions = {
+    all: true,
+    options: [
+      { label: '2 inch A4 PP Box', checked: false },
+      { label: '2 inch FC PP Box', checked: false },
+      { label: '3 inch A4 PP Box', checked: false },
+      { label: '3 inch FC PP Box', checked: false },
+      { label: '3 inch A4 Marble Laminated Box', checked: false },
+      { label: '3 inch FC Marble Laminated Box', checked: false },
+      // Add other options similarly
+    ]
+  };
+
+  updateAllCheckbox() {
+    this.filterOptions.all = this.filterOptions.options.every(option => option.checked);
+    this.checkedFiles = this.filterOptions.options
+      .filter(option => option.checked)
+      .map(option => option.label);
+  }
+
+  toggleAllOptions() {
+    for (const option of this.filterOptions.options) {
+      option.checked = this.filterOptions.all;
+    }
+  }
 
   shredders: { id: number; name: string; description: string; carouselImgs: string[] }[] = [
     {
@@ -117,7 +146,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Black",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Black.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -125,7 +155,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Blue",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Blue.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Blue 01.webp"
       ],
     },
     {
@@ -133,7 +164,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Green",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Green.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -141,7 +173,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Grey",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Grey.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -149,7 +182,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Orange",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Orange.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -157,7 +191,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Pink",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Pink.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -165,7 +200,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Red",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Red.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 01.webp"
       ],
     },
     {
@@ -173,7 +209,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Violet",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Violet.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -181,7 +218,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 PP Box File Yellow",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 PP Box File Yellow.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     }
   ];
@@ -192,7 +230,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Black",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Black.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -200,7 +239,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Blue",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Blue.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Blue 01.webp"
       ],
     },
     {
@@ -208,7 +248,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Green",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Green.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -216,7 +257,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Grey",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Grey.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -224,7 +266,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Orange",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Orange.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -232,7 +275,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Pink",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Pink.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -240,7 +284,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Red",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Red.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 01.webp"
       ],
     },
     {
@@ -248,7 +293,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Yellow",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC PP Box File Yellow.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     },
     {
@@ -256,7 +302,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC PP Box File Purple",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch PP Box File Purple.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Black 01.webp"
       ],
     }
   ];
@@ -267,7 +314,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 Marble Laminated Box File Black",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 Marble Laminated Box File Black.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -275,7 +323,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 Marble Laminated Box File Blue",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 Marble Laminated Box File Blue.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -283,7 +332,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 Marble Laminated Box File Green",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 Marble Laminated Box File Green.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -291,7 +341,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch A4 Marble Laminated Box File Red",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch A4 Marble Laminated Box File Red.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     }
   ];
@@ -302,7 +353,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC Marble Laminated Box File Black",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC Marble Laminated Box File Black.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -310,7 +362,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC Marble Laminated Box File Blue",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC Marble Laminated Box File Blue.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -318,7 +371,8 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC Marble Laminated Box File Green",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC Marble Laminated Box File Green.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
       ],
     },
     {
@@ -326,7 +380,35 @@ export class ProductsComponent {
       "name": "Faili - 3 Inch FC Marble Laminated Box File Red",
       "carouselImgs": [
         "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch FC Marble Laminated Box File Red.webp",
-        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp"
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Box File Dimensions.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - 3 Inch Laminated Box Files Red 02.webp"
+      ],
+    }
+  ];
+
+  fileDividers: { id: number; name: string; carouselImgs: string[] }[] = [
+    {
+      "id": 1,
+      "name": "Faili - Divider A - Z",
+      "carouselImgs": [
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - Dividers A-Z 01.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - Dividers A-Z 02.webp"
+      ],
+    },
+    {
+      "id": 2,
+      "name": "Faili - Divider JAN - DEC",
+      "carouselImgs": [
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - Dividers Jan-Dec 01.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - Dividers Jan-Dec 02.webp"
+      ],
+    },
+    {
+      "id": 3,
+      "name": "Faili - A5 Divider",
+      "carouselImgs": [
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - A5 Divider.webp",
+        "assets/Images/Faili Limited - Product Images/WEBP/Faili - A5 Divider in File.webp"
       ],
     }
   ];
@@ -338,17 +420,30 @@ export class ProductsComponent {
       description: 'Supernote A5 X is your expansive haven for creativity. Designed for the specialists, the academics, and the knowledge seekers, it has generous screen space to dive deep into documents, unfurl the beauty of sketches, and enjoy the art of writing with grace and focus.',
       carouselImgs: [
         'assets/Images/SuperNote/supernoteA5x.webp',
-        'https://supernote.com/cdn/shop/files/Artboard4_361337b7-8571-4c29-b494-a7ff456c7d78_840x.jpg?v=1689238059',
-        'https://via.placeholder.com/400x200',
+        'https://supernote.com/cdn/shop/files/Artboard4_361337b7-8571-4c29-b494-a7ff456c7d78_840x.jpg?v=1689238059'
       ],
     },
     // Add more super notes as needed
   ];
 
-  scrollToSuperNoteSection() {
-    const element = document.getElementById('super-note-section');
+
+  scrollToSection(section: string) {
+    const element = document.getElementById(section + '-section');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight: number = 5 * 16; // Assuming 1rem = 16px, so 5rem is 5 * 16px
+      const elementRect: DOMRect = element.getBoundingClientRect();
+
+      // Calculate targetOffset and avoid recalculating window.pageYOffset
+      const targetOffset: number = elementRect.top + window.pageYOffset - navbarHeight;
+
+      // Use a requestAnimationFrame for smoother animation
+      const animationOptions: ScrollToOptions = {
+        top: targetOffset,
+        behavior: 'smooth'
+      };
+      window.requestAnimationFrame(() => {
+        window.scrollTo(animationOptions);
+      });
     }
   }
 }

@@ -16,7 +16,7 @@ export class HomeComponent {
       altText: 'slide 2'
     },
     {
-      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredders.webp',
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredders.jpg',
       altText: 'slide 3'
     },
     {
@@ -24,12 +24,8 @@ export class HomeComponent {
       altText: 'slide 4'
     },
     {
-      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/supernoteA5x.webp',
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/supernote-A5x2.webp',
       altText: 'slide 5'
-    },
-    {
-      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/supernoteA6x.webp',
-      altText: 'slide 6'
-    },
+    }
   ];
 }

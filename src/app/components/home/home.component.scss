@@ -3,15 +3,31 @@
     flex-direction: column;
     height: 100%;
     background-color: #6e6e6e;
+    padding: 1rem;
+}
+
+.carousel-inner {
+    border-radius: 1rem;
 }
 
 .carousel-image-slide {
     height: 49rem;
 }
 
-.carousel-image {
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     object-fit: cover;
+    /* Maintain aspect ratio without cropping */
     filter: brightness(0.5) blur(6px);
 }
 
@@ -64,6 +80,7 @@
         transition: all 0.3s ease-in-out;
         opacity: 0.9;
         background-color: rgba(37, 61, 131, 1);
+        color: #1fff9a;
     }
 
 }
