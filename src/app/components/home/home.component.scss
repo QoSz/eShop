@@ -84,3 +84,34 @@
     }
 
 }
+
+@media screen and (max-width: 768px) {
+    .home-container {
+        padding: 0;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .caption-big-text {
+        font-size: 2.7rem;
+        text-wrap: balance;
+    }
+
+    .caption-small-text {
+        font-size: 1.3rem;
+        text-wrap: balance;
+    }
+
+    .caption-btn-container {
+
+        .caption-btn {
+            font-size: 1.3rem;
+            padding: 1rem 1.5rem;
+        }
+    }
+}
