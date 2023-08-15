@@ -1,1 +1,33 @@
-<p>product-details works!</p>
+<div class="product-detail-container">
+    <div class="product-detail-card">
+        <div class="product-detail-img-container">
+            <!-- Product Carousel -->
+            <div [id]="'productCarousel' + product.id" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let img of product.carouselImgs; let i = index"
+                        [ngClass]="{ 'active': i === 0 }">
+                        <img src="{{ img }}" class="card-img-top product-detail-img" alt="Product Image">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    [attr.data-bs-target]="'#productCarousel' + product.id" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    [attr.data-bs-target]="'#productCarousel' + product.id" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="product-detail-info">
+            <h2 class="product-detail-title">{{ product.name }}</h2>
+            <p class="product-detail-description">{{ product.description }}</p>
+            
+            <div class="get-quote-container">
+                <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+.product-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+}
+
+.product-detail-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-img-container {
+    // background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.product-detail-img {
+    width: 35rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    border-radius: 1rem;
+}
+
+.product-detail-title {
+    font-size: 2rem;
+    margin: 0;
+    padding: 2rem 0 1rem;
+}
+
+.product-detail-description {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.get-quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+
+    .get-quote-btn {
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        background-color: rgba(37, 61, 131, 0.9);
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+            background-color: rgba(37, 61, 131, 1);
+            color: #1fff9a;
+        }
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .product-detail-container {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 616px) {
+    .product-detail-container {
+        padding: 0;
+    }
+
+    .product-detail-card {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .product-detail-img {
+        width: 100%;
+    }
+
+    .product-detail-title {
+        font-size: 1.7rem;
+    }
+    
+    .product-detail-description {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-detail-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-detail-description {
+        font-size: 0.9rem;
+    }
+}

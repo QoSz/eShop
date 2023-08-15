@@ -62,33 +62,32 @@
             </div>
         </div>
         <div class="get-quote-container">
-            <a href="" class="get-quote-btn">Get a quote</a>
+            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
 
     <!-- Files Section -->
     <div id="files-section" class="products-container">
-        <h2 class="files-heading-h2">Files</h2>
-
-        <div class="files-filter-container">
-            <label class="files-filter-label">Filter Files:</label>
-            <button class="filter-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Filter <i class="bi bi-funnel"></i>
-            </button>
-            <div class="dropdown-menu file-filter-menu" aria-labelledby="dropdownMenuButton">
-                <label class="dropdown-item">
-                    <input type="checkbox" [(ngModel)]="filterOptions.all" (change)="toggleAllOptions()" /> All
-                </label>
-                <div class="dropdown-divider"></div>
-                <ng-container *ngFor="let option of filterOptions.options">
+        <div class="files-flex-container">
+            <div class="files-heading-container"><h2 class="files-heading-h2">Files</h2></div>
+            <div class="files-filter-container">
+                <button class="filter-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filter <i class="bi bi-funnel"></i>
+                </button>
+                <div class="dropdown-menu file-filter-menu" aria-labelledby="dropdownMenuButton">
                     <label class="dropdown-item">
-                        <input type="checkbox" [(ngModel)]="option.checked" (change)="updateAllCheckbox()" /> {{
-                        option.label }}
+                        <input type="checkbox" [(ngModel)]="filterOptions.all" (change)="toggleAllOptions()" /> All
                     </label>
-                </ng-container>
+                    <div class="dropdown-divider"></div>
+                    <ng-container *ngFor="let option of filterOptions.options">
+                        <label class="dropdown-item">
+                            <input type="checkbox" [(ngModel)]="option.checked" (change)="updateAllCheckbox()" /> {{
+                            option.label }}
+                        </label>
+                    </ng-container>
+                </div>
             </div>
         </div>
-
 
         <div class="two-inch-A4-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('2 inch A4 PP Box')">
             <h3 class="files-heading">2 inch A4 PP Box</h3>
@@ -295,7 +294,7 @@
             </div>
         </div>
         <div class="get-quote-container">
-            <a href="" class="get-quote-btn">Get a quote</a>
+            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
 
@@ -333,7 +332,7 @@
             </div>
         </div>
         <div class="get-quote-container">
-            <a href="" class="get-quote-btn">Get a quote</a>
+            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
 
@@ -373,7 +372,7 @@
             </div>
         </div>
         <div class="get-quote-container">
-            <a href="" class="get-quote-btn">Get a quote</a>
+            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
 
