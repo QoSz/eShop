@@ -6,6 +6,10 @@
     padding: 1rem;
 }
 
+#hero-carousel {
+    animation: slideLR 1s ease;
+}
+
 .carousel-inner {
     border-radius: 1rem;
 }
@@ -113,5 +117,16 @@
             font-size: 1.3rem;
             padding: 1rem 1.5rem;
         }
+    }
+}
+
+
+@keyframes slideLR {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
     }
 }

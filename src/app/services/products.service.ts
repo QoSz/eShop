@@ -428,4 +428,49 @@ export class ProductsService {
   getSuperNotes(): { id: number; name: string; description: string; carouselImgs: string[] }[] {
     return this.superNotes;
   }
+
+  getProductByCategoryAndId(category: string, id: number): any {
+    let products: any[];
+  
+    // Determine which category array to use based on the provided category
+    switch (category) {
+      case 'shredders':
+        products = this.shredders;
+        break;
+      case '2-inch-a4-files':
+        products = this.twoInchA4Files;
+        break;
+      case '2-inch-fc-files':
+        products = this.twoInchFCFiles;
+        break;
+      // Add more cases for other categories
+      case '3-inch-a4-files':
+        products = this.threeInchA4Files;
+        break;
+      case '3-inch-fc-files':
+        products = this.threeInchFCFiles;
+        break;
+      case '3-inch-a4-marble-files':
+        products = this.threeInchA4MarbleFiles;
+        break;
+      case '3-inch-fc-marble-files':
+        products = this.threeInchFCMarbleFiles;
+        break;
+      case 'file-dividers':
+        products = this.fileDividers;
+        break;
+      case 'super-notes':
+        products = this.superNotes;
+        break;
+      default:
+        products = [];
+        break;
+    }
+  
+    // Find the product with the specified ID in the selected category
+    const product = products.find(item => item.id === id);
+    
+    return product;
+  }
+  
 }

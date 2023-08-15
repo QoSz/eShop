@@ -53,7 +53,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title product-card-title">{{ shredder.name }}</h5>
+                    <h5 class="card-title product-card-title">
+                        <a [routerLink]="['/products', 'shredders', shredder.id]" 
+                        class="product-details-link">{{ shredder.name }}</a>
+                    </h5>
                     <p class="card-text">{{ shredder.description }}</p>
                 </div>
             </div>
@@ -113,7 +116,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '2-inch-a4-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -144,7 +150,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '2-inch-fc-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -175,7 +184,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '3-inch-a4-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -206,7 +218,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '3-inch-fc-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -237,7 +252,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '3-inch-a4-marble-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -268,7 +286,10 @@
                         </div>
                     </div>
                     <div class="card-body files-card-body">
-                        <h5 class="card-title product-card-title files-card-title">{{ fileBox.name }}</h5>
+                        <h5 class="card-title product-card-title files-card-title">
+                            <a [routerLink]="['/products', '3-inch-fc-marble-files', fileBox.id]" 
+                            class="product-details-link">{{ fileBox.name }}</a>
+                        </h5>
                     </div>
                 </div>
             </div>
@@ -304,7 +325,10 @@
                     </div>
                 </div>
                 <div class="card-body card-body-dividers">
-                    <h5 class="card-title product-card-title dividers-card-title">{{ divider.name }}</h5>
+                    <h5 class="card-title product-card-title files-card-title">
+                        <a [routerLink]="['/products', 'file-dividers', divider.id]" 
+                        class="product-details-link">{{ divider.name }}</a>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -340,7 +364,10 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title product-card-title">{{ superNote.name }}</h5>
+                    <h5 class="card-title product-card-title files-card-title">
+                        <a [routerLink]="['/products', 'super-notes', superNote.id]" 
+                        class="product-details-link">{{ superNote.name }}</a>
+                    </h5>
                     <p class="card-text product-card-description">{{superNote.description}}</p>
                 </div>
             </div>

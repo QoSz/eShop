@@ -27,6 +27,17 @@
     margin: 0;
 }
 
+.product-details-link {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: rgba(37, 61, 131, 1);
+        font-size: 1.5rem;
+    }
+}
+
 .product-card-description {
     font-size: 1rem;
     margin: 0;
@@ -173,6 +184,7 @@
         transform: scale(1.1);
         transition: all 0.3s ease;
         background-color: rgba(37, 61, 131, 1);
+        color: #1fff9a;
     }
 }
 
@@ -180,6 +192,7 @@
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    font-size: 1.2rem;
 }
 
 .file-img {
@@ -316,6 +329,7 @@
             transform: scale(1.05);
             transition: all 0.3s ease;
             background-color: rgba(37, 61, 131, 1);
+            color: #1fff9a;
         }
     }
 }
