@@ -19,6 +19,7 @@
     height: 100%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 .contact-info-container {
@@ -131,6 +132,72 @@
     }
 }
 
+.message-us-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 100%;
+    animation: waterFallDU 1s ease;
+}
+
+.message-us-heading {
+    padding-bottom: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+.message-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        padding-left: 0.5rem;
+    }
+
+    input {
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    textarea {
+        border: none;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+.form-submit-btn {
+    border: none;
+    border-radius: 3rem;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: rgba(37, 61, 131, 0.9);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.01);
+        transition: all 0.3s ease;
+        background-color: rgba(37, 61, 131, 1);
+    }
+}
+
 @media screen and (max-width: 910px) {
     .contact-us-card {
         grid-template-columns: 1fr;
@@ -154,7 +221,7 @@
     }
 }
 
-// create a keyframe animation called waterFallLR that rotates an element from 90 degrees to 0 degrees and make the element fall in a curve from the top right to the bottom.
+
 @keyframes waterFallLR {
     0% {
         transform: rotate(-90deg) translateX(100%);
@@ -174,6 +241,17 @@
     }
     100% {
         transform: rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes waterFallDU {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
         opacity: 1;
     }
 }
