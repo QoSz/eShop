@@ -386,8 +386,11 @@ export class ProductsService {
       name: 'Super Note A5x',
       description: 'Supernote A5 X is your expansive haven for creativity. Designed for the specialists, the academics, and the knowledge seekers, it has generous screen space to dive deep into documents, unfurl the beauty of sketches, and enjoy the art of writing with grace and focus.',
       carouselImgs: [
-        'assets/Images/SuperNote/supernoteA5x.webp',
-        'https://supernote.com/cdn/shop/files/Artboard4_361337b7-8571-4c29-b494-a7ff456c7d78_840x.jpg?v=1689238059'
+        'assets/Images/Faili Limited - Product Images/WEBP/supernoteA5x.webp',
+        'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenDarkBlue.webp',
+        'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenLightBlue.webp',
+        'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenGrey.webp',
+        'assets/Images/Faili Limited - Product Images/WEBP/SuperNoteVsBanana.webp'
       ],
     },
     // Add more super notes as needed
