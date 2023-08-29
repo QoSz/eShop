@@ -26,6 +26,47 @@
         </div>
     </div>
 
+    <!-- SuperNote Section -->
+    <div id="super-note-section" class="products-container">
+        <h2 class="heading-center">Super Note</h2>
+        <div class="supernote-container">
+            <div class="card supernote-card" *ngFor="let superNote of superNotes">
+                <div class="product-card-img-container">
+                    <!-- Super Note Carousel -->
+                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
+                                [ngClass]="{ 'active': i === 0 }">
+                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files"
+                                    [loading]="i === 0 ? 'eager' : 'lazy'">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title product-card-title files-card-title">
+                        <a [routerLink]="['/products', 'super-notes', superNote.id]" class="product-details-link">{{
+                            superNote.name }}</a>
+                    </h5>
+                    <p class="card-text product-card-description">{{superNote.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="get-quote-container">
+            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
+        </div>
+    </div>
+
     <!-- Shredders Section -->
     <div id="shredders-section" class="products-container">
         <h2 class="heading-center">Shredders</h2>
@@ -37,7 +78,8 @@
                         <div class="carousel-inner">
                             <div class="carousel-item" *ngFor="let img of shredder.carouselImgs; let i = index"
                                 [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top shredder-img" alt="shredder">
+                                <img src="{{ img }}" class="card-img-top shredder-img" alt="shredder"
+                                    [loading]="i === 0 ? 'eager' : 'lazy'">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button"
@@ -54,8 +96,8 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title product-card-title">
-                        <a [routerLink]="['/products', 'shredders', shredder.id]" 
-                        class="product-details-link">{{ shredder.name }}</a>
+                        <a [routerLink]="['/products', 'shredders', shredder.id]" class="product-details-link">{{
+                            shredder.name }}</a>
                     </h5>
                     <p class="card-text">{{ shredder.description }}</p>
                 </div>
@@ -69,7 +111,9 @@
     <!-- Files Section -->
     <div id="files-section" class="products-container">
         <div class="files-flex-container">
-            <div class="files-heading-container"><h2 class="files-heading-h2">Files</h2></div>
+            <div class="files-heading-container">
+                <h2 class="files-heading-h2">Files</h2>
+            </div>
             <div class="files-filter-container">
                 <button class="filter-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Filter <i class="bi bi-funnel"></i>
@@ -89,7 +133,8 @@
             </div>
         </div>
 
-        <div class="two-inch-A4-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('2 inch A4 PP Box')">
+        <div class="two-inch-A4-PP-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('2 inch A4 PP Box')">
             <h3 class="files-heading">2 inch A4 PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of twoInchA4Files">
@@ -99,7 +144,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -116,14 +161,15 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '2-inch-a4-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '2-inch-a4-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="two-inch-FC-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('2 inch FC PP Box')">
+        <div class="two-inch-FC-PP-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('2 inch FC PP Box')">
             <h3 class="files-heading">2 inch FC PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of twoInchFCFiles">
@@ -133,7 +179,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -150,14 +196,15 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '2-inch-fc-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '2-inch-fc-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="three-inch-A4-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 PP Box')">
+        <div class="three-inch-A4-PP-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 PP Box')">
             <h3 class="files-heading">3 inch A4 PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchA4Files">
@@ -167,7 +214,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -184,14 +231,15 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '3-inch-a4-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '3-inch-a4-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="three-inch-FC-PP-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC PP Box')">
+        <div class="three-inch-FC-PP-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC PP Box')">
             <h3 class="files-heading">3 inch FC PP Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchFCFiles">
@@ -201,7 +249,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -218,14 +266,15 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '3-inch-fc-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '3-inch-fc-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="three-inch-A4-Marble-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 Marble Laminated Box')">
+        <div class="three-inch-A4-Marble-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('3 inch A4 Marble Laminated Box')">
             <h3 class="files-heading">3 inch A4 Marble Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchA4MarbleFiles">
@@ -235,7 +284,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -252,14 +301,15 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '3-inch-a4-marble-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '3-inch-a4-marble-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="three-inch-FC-Marble-Box-container" *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC Marble Laminated Box')">
+        <div class="three-inch-FC-Marble-Box-container"
+            *ngIf="filterOptions.all || checkedFiles.includes('3 inch FC Marble Laminated Box')">
             <h3 class="files-heading">3 inch FC Marble Box</h3>
             <div class="files-container">
                 <div class="card files-card" *ngFor="let fileBox of threeInchFCMarbleFiles">
@@ -269,7 +319,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item" *ngFor="let img of fileBox.carouselImgs; let i = index"
                                     [ngClass]="{ 'active': i === 0 }">
-                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box">
+                                    <img src="{{ img }}" class="card-img-top file-img" alt="file box" loading="lazy">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -286,8 +336,8 @@
                     </div>
                     <div class="card-body files-card-body">
                         <h5 class="card-title product-card-title files-card-title">
-                            <a [routerLink]="['/products', '3-inch-fc-marble-files', fileBox.id]" 
-                            class="product-details-link">{{ fileBox.name }}</a>
+                            <a [routerLink]="['/products', '3-inch-fc-marble-files', fileBox.id]"
+                                class="product-details-link">{{ fileBox.name }}</a>
                         </h5>
                     </div>
                 </div>
@@ -298,6 +348,7 @@
         </div>
     </div>
 
+    <!-- File Divider Section -->
     <div id="file-divider-section" class="products-container">
         <h2 class="heading-center">Dividers</h2>
         <div class="dividers-container">
@@ -308,7 +359,7 @@
                         <div class="carousel-inner">
                             <div class="carousel-item" *ngFor="let img of divider.carouselImgs; let i = index"
                                 [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top dividers-img" alt="files">
+                                <img src="{{ img }}" class="card-img-top dividers-img" alt="files" loading="lazy">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button"
@@ -325,49 +376,9 @@
                 </div>
                 <div class="card-body card-body-dividers">
                     <h5 class="card-title product-card-title files-card-title">
-                        <a [routerLink]="['/products', 'file-dividers', divider.id]" 
-                        class="product-details-link">{{ divider.name }}</a>
+                        <a [routerLink]="['/products', 'file-dividers', divider.id]" class="product-details-link">{{
+                            divider.name }}</a>
                     </h5>
-                </div>
-            </div>
-        </div>
-        <div class="get-quote-container">
-            <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
-        </div>
-    </div>
-
-
-    <div id="super-note-section" class="products-container">
-        <h2 class="heading-center">Super Note</h2>
-        <div class="supernote-container">
-            <div class="card supernote-card" *ngFor="let superNote of superNotes">
-                <div class="product-card-img-container">
-                    <!-- Super Note Carousel -->
-                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
-                        <div class="carousel-inner">
-                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
-                                [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title product-card-title files-card-title">
-                        <a [routerLink]="['/products', 'super-notes', superNote.id]" 
-                        class="product-details-link">{{ superNote.name }}</a>
-                    </h5>
-                    <p class="card-text product-card-description">{{superNote.description}}</p>
                 </div>
             </div>
         </div>

@@ -45,3 +45,14 @@ nav {
 .nav-flex-end {
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        .nav-link-label {
+            
+            &:hover {
+                border: none;
+            }
+        }
+    }
+}

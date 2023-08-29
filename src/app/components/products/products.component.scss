@@ -9,6 +9,7 @@
     text-align: center;
     font-size: 2rem;
     padding-bottom: 2rem;
+    margin: 0;
 }
 
 .products-container {
@@ -366,15 +367,9 @@
         width: calc(100% - 1rem);
     }
 
-    .supernote-container {
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    }
-
     .supernote-card {
-        width: calc(100% - 1rem);
+        width: calc(28rem + 3rem);
     }
-
-
 }
 
 

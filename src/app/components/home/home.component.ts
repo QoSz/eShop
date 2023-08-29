@@ -16,7 +16,7 @@ export class HomeComponent {
       altText: 'slide 2'
     },
     {
-      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredders.jpg',
+      imageUrl: 'assets/Images/Faili Limited - Product Images/WEBP/Faili - Shredders.webp',
       altText: 'slide 3'
     },
     {

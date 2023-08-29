@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  @ViewChild('navbarCollapse') navbarCollapse!: ElementRef;
 
+  collapseNavbar() {
+    if (this.navbarCollapse && this.navbarCollapse.nativeElement && this.navbarCollapse.nativeElement.classList.contains('show')) {
+      this.navbarCollapse.nativeElement.classList.remove('show');
+    }
+  }
 }

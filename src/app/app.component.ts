@@ -14,18 +14,18 @@ export class AppComponent {
     if (!this.isScrolling) {
       this.isScrolling = true;
 
-      if (window.scrollY > 200) {
-        this.showScrollUpButton = true;
-      } else {
-        this.showScrollUpButton = false;
-      }
+      this.showScrollUpButton = window.scrollY > 200;
 
       // Debounce the event to prevent excessive function calls
       setTimeout(() => {
         this.isScrolling = false;
+        if (window.scrollY === 0) {
+          this.showScrollUpButton = false; // Hide the button when at the top
+        }
       }, 100); // Adjust the debounce time as needed
     }
   }
+
 
   scrollToTop() {
     const startScroll = window.scrollY;
@@ -35,7 +35,7 @@ export class AppComponent {
     function scrollStep(timestamp: number) {
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Use a slower easing function for a slower scroll animation
       const easing = (t: number) => t * t * t;
 
@@ -45,8 +45,7 @@ export class AppComponent {
         window.requestAnimationFrame(scrollStep);
       }
     }
-
     window.requestAnimationFrame(scrollStep);
   }
-  
+
 }

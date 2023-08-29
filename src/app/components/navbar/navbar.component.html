@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-md fixed-top" data-bs-theme="dark">
     <div class="container-fluid nav-container">
         <div class="nav-brand-container">
-            <a routerLink="/"><img src="assets/Images/Faili-Logo-Transparent-White.svg" alt="Faili Logo" class="nav-brand-img"></a>
+            <a routerLink="/"><img src="assets/Images/Faili-Logo-Transparent-White.svg" alt="Faili Logo" class="nav-brand-img" loading="lazy"></a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#togglerMenu"
             aria-controls="togglerMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse nav-flex-end" id="togglerMenu">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse nav-flex-end" id="togglerMenu" #navbarCollapse>
+            <ul class="navbar-nav" (click)="collapseNavbar()">
                 <li class="nav-item">
                     <a class="nav-link nav-link-label" aria-current="page" [routerLink]="['/home']" routerLinkActive="active"><i class="bi bi-house"></i> Home</a>
                 </li>

@@ -8,7 +8,7 @@
     <div class="carousel-inner">
       <div *ngFor="let item of carouselItems; let i = index" class="carousel-item" [ngClass]="{ 'active': i === 0 }">
         <div class="image-container">
-          <img [src]="item.imageUrl" class="d-block w-100 carousel-image" [alt]="item.altText">
+          <img [src]="item.imageUrl" class="d-block w-100 carousel-image" [alt]="item.altText" [loading]="i === 0 ? 'eager' : 'lazy'">
         </div>
         <div class="carousel-caption d-md-block">
           <h1 class="caption-big-text">Organize, Create and Secure</h1>

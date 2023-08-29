@@ -31,15 +31,17 @@
                 <p class="contact-sub-info padding-07">Contact us for a quote. Help or join the team.</p>
                 <div class="social-icons-container">
                     <i class="bi bi-facebook facebook-icon"></i>
-                    <a href="https://www.instagram.com/faili_ltd/" target="_blank"><i class="bi bi-instagram instagram-icon"></i></a>
+                    <a href="https://www.instagram.com/faili_ltd/" target="_blank" aria-label="Instagram"><i
+                            class="bi bi-instagram instagram-icon"></i></a>
                 </div>
             </div>
 
         </div>
         <div class="location-pin-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8458741655695!2d36.803188975071286!3d-1.2650353987229184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f176eeba07849%3A0x8089e37aa0369a43!2sFaili%20Limited!5e0!3m2!1sen!2ske!4v1691176100239!5m2!1sen!2ske" 
-            class="location-map" allowfullscreen="true" loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8458741655695!2d36.803188975071286!3d-1.2650353987229184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f176eeba07849%3A0x8089e37aa0369a43!2sFaili%20Limited!5e0!3m2!1sen!2ske!4v1691176100239!5m2!1sen!2ske"
+                class="location-map" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Google Map - Location"></iframe>
         </div>
     </div>
     <div class="message-us-card">
@@ -47,22 +49,26 @@
         <form [formGroup]="form" (ngSubmit)="send()" class="message-us-form">
             <div class="form-field-container">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" formControlName="from_name" placeholder="Full Name" required>
+                <input type="text" id="name" formControlName="from_name" placeholder="Full Name" required
+                    autocomplete="off">
             </div>
-            
+
             <div class="form-field-container">
                 <label for="from_email">Your Email:</label>
-                <input type="email" id="from_email" formControlName="from_email" placeholder="Enter your email" required>
+                <input type="email" id="from_email" formControlName="from_email" placeholder="Enter your email" required
+                    autocomplete="email">
             </div>
             <div class="form-field-container">
                 <label for="subject">Subject:</label>
-                <input type="text" id="subject" formControlName="subject" placeholder="Enter your subject" required>
+                <input type="text" id="subject" formControlName="subject" placeholder="Enter your subject" required
+                    autocomplete="off">
             </div>
             <div class="form-field-container">
                 <label for="message">Message:</label>
-                <textarea id="message" formControlName="message" rows="4" placeholder="Enter your message" required></textarea>
+                <textarea id="message" formControlName="message" rows="4" placeholder="Enter your message" required
+                    autocomplete="off"></textarea>
             </div>
             <button type="submit" class="form-submit-btn">Send</button>
         </form>
-    </div>    
+    </div>
 </div>
