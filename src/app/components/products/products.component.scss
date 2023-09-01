@@ -114,6 +114,7 @@
     justify-content: center;
     align-items: center;
 }
+
 // <--------------------------------------- Brands Container --------------------------------------->
 
 // <--------------------------------------- Shreders --------------------------------------->
@@ -241,7 +242,7 @@
 .files-card-body {
     padding: 1rem 0 0;
 }
- 
+
 .files-card-title {
     padding: 0;
 }
@@ -291,12 +292,29 @@
 // <--------------------------------------- Super Note --------------------------------------->
 
 .supernote-container {
-    display: grid;
-    place-items: center;
-    // grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    // gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Adjust the gap between cards as needed */
 }
 
+
+.supernote-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    animation: slideInRL 1s ease;
+}
+
+.supernote-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+}
 
 .supernote-img {
     width: 100%;
@@ -306,17 +324,6 @@
     border: 1px solid #dadada;
 }
 
-.supernote-card {
-    width: 28rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box; // Add this line
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    animation: slideInLR 1s ease;
-}
 
 // <--------------------------------------- Super Note --------------------------------------->
 
@@ -329,7 +336,7 @@
     .get-quote-btn {
         border-radius: 2rem;
         padding: 1rem 2rem;
-        background-color: rgba(37, 61, 131, 0.9);
+        background-color: rgba(18, 40, 103, 0.90);
         color: #fff;
         border: none;
         font-size: 1rem;
@@ -341,7 +348,7 @@
         &:hover {
             transform: scale(1.05);
             transition: all 0.3s ease;
-            background-color: rgba(37, 61, 131, 1);
+            background-color: rgba(18, 40, 103, 1);
             color: #1fff9a;
         }
     }
@@ -363,10 +370,6 @@
 
     .dividers-card {
         width: calc(100% - 1rem);
-    }
-
-    .supernote-card {
-        width: calc(28rem + 3rem);
     }
 }
 
@@ -393,10 +396,6 @@
     }
 
     .dividers-card {
-        width: calc(100% - 2rem);
-    }
-
-    .supernote-card {
         width: calc(100% - 2rem);
     }
 }
@@ -447,17 +446,6 @@
     .dividers-card {
         width: 100%;
     }
-
-    .supernote-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .supernote-card {
-        width: 100%;
-    }
 }
 
 
@@ -484,6 +472,7 @@
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -494,6 +483,7 @@
     0% {
         transform: translateX(100%);
     }
+
     100% {
         transform: translateX(0);
     }

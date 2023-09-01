@@ -364,7 +364,6 @@ export class ProductsService {
         'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenDarkBlue.webp',
         'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenLightBlue.webp',
         'assets/Images/Faili Limited - Product Images/WEBP/SuperNotePenGrey.webp',
-        'assets/Images/Faili Limited - Product Images/WEBP/SuperNoteVsBanana.webp'
       ],
     },
     // Add more super notes as needed

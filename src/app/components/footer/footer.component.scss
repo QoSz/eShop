@@ -1,7 +1,7 @@
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columns with minimum width of 300px */
-    background-color: rgba(37, 61, 131, 0.90);
+    background-color: rgba(18, 40, 103, 0.90);
     color: white;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .copy-right-container {
-    background-color: rgba(37, 61, 131, 0.83);
+    background-color: rgba(19, 39, 98, 0.83);
 
     .copy-right-text {
         display: flex;

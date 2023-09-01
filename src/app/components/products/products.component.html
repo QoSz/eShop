@@ -31,34 +31,19 @@
         <h2 class="heading-center">Super Note</h2>
         <div class="supernote-container">
             <div class="card supernote-card" *ngFor="let superNote of superNotes">
-                <div class="product-card-img-container">
-                    <!-- Super Note Carousel -->
-                    <div [id]="'superNoteCarousel' + superNote.id" class="carousel slide carousel-fade">
-                        <div class="carousel-inner">
-                            <div class="carousel-item" *ngFor="let img of superNote.carouselImgs; let i = index"
-                                [ngClass]="{ 'active': i === 0 }">
-                                <img src="{{ img }}" class="card-img-top supernote-img" alt="files"
-                                    [loading]="i === 0 ? 'eager' : 'lazy'">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            [attr.data-bs-target]="'#superNoteCarousel' + superNote.id" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                <div class="supernote-card-img-container">
+                    <div class="supernote-images">
+                        <img *ngFor="let img of superNote.carouselImgs" src="{{ img }}" class="supernote-img"
+                            alt="files" [loading]="'lazy'">
                     </div>
                 </div>
                 <div class="card-body">
                     <p class="card-title product-card-title files-card-title">
-                        <a [routerLink]="['/products', 'super-notes', superNote.id]" class="product-details-link">{{
-                            superNote.name }}</a>
+                        <a [routerLink]="['/products', 'super-notes', superNote.id]" class="product-details-link">
+                            {{ superNote.name }}
+                        </a>
                     </p>
-                    <p class="card-text product-card-description">{{superNote.description}}</p>
+                    <p class="card-text product-card-description">{{ superNote.description }}</p>
                 </div>
             </div>
         </div>
@@ -66,6 +51,7 @@
             <a routerLink="/contact-us" class="get-quote-btn">Get a quote</a>
         </div>
     </div>
+    
 
     <!-- Shredders Section -->
     <div id="shredders-section" class="products-container">
